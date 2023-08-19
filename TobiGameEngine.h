@@ -1,16 +1,19 @@
 /*
 Tobi Console Game Engine
 
-Version 0.1a
+Version 0.1b
 
 Provides basic functionalities to create a game in the system console.
 */
 
 #include <iostream>
+#include <chrono>
+#include <thread>
 #include <stdlib.h>
 #include <Windows.h>
 #include <Tchar.h>
 #include <string.h>
+
 
 using namespace std;
 
@@ -39,13 +42,18 @@ public:
 		nScreenWidth = width;
 		nScreenHeight = height;
 
-		SMALL_RECT srWindowSize = { 0, 0, (nScreenWidth - 1), (nScreenHeight - 1) };
+		SMALL_RECT srWindowSize = { 0, 0, 1, 1 };
 
 		SetConsoleWindowInfo(wConsoleHnd, TRUE, &srWindowSize);
 
-		COORD cBufferSize = { nScreenWidth, nScreenHeight };
+		COORD cBufferSize = { (short)nScreenWidth, (short)nScreenHeight };
 
 		SetConsoleScreenBufferSize(wConsoleHnd, cBufferSize);
+		SetConsoleActiveScreenBuffer(wConsoleHnd);
+
+		srWindowSize = { 0, 0, (short) (nScreenWidth - 1), (short)(nScreenHeight - 1) };
+
+		SetConsoleWindowInfo(wConsoleHnd, TRUE, &srWindowSize);
 
 		return 0;
 	}
@@ -64,7 +72,7 @@ public:
 	}
 
 protected:
-	
+
 	int nScreenWidth;
 	int nScreenHeight;
 	HANDLE wConsoleHnd;
@@ -72,5 +80,3 @@ protected:
 
 	wstring sConsoleTitle;
 };
-
-

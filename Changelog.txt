@@ -1,0 +1,12 @@
+0.1a
+
+Console game engine with basic capabilities:
+
+-Create console
+-Write to screen
+-Set tick interval
+
+0.1b
+
+Fixed bug where window size wouldn't be set properly
+Added chrono and thread libraries
