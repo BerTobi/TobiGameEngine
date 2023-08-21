@@ -10,3 +10,17 @@ Console game engine with basic capabilities:
 
 Fixed bug where window size wouldn't be set properly
 Added chrono and thread libraries
+
+0.1c
+
+Added cursor visibility toggle function
+CreateConsole now accepts arguments to set FontSize
+CreateConsole now checks for largest window size and adjust accordingly 
+Added exception library
+
+TODO
+
+0.2
+
+Zooming capabilities
+Sprite drawing
