@@ -18,9 +18,16 @@ CreateConsole now accepts arguments to set FontSize
 CreateConsole now checks for largest window size and adjust accordingly 
 Added exception library
 
+0.2a
+
+Added screen buffer to the engine class
+Added sprite drawing function
+Added sprite scaling
+
 TODO
 
-0.2
-
-Zooming capabilities
-Sprite drawing
+-Add colours
+-User interface functions
+-Keyboard input
+-Mouse input
+-Colision detection
