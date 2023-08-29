@@ -24,6 +24,12 @@ Added screen buffer to the engine class
 Added sprite drawing function
 Added sprite scaling
 
+0.2b
+
+Sprites no longer print blank spaces over background
+Sprites are now a class containing text info and size
+Added Entity and unit classes
+
 TODO
 
 -Add colours
