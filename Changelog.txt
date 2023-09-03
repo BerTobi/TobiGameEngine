@@ -30,10 +30,37 @@ Sprites no longer print blank spaces over background
 Sprites are now a class containing text info and size
 Added Entity and unit classes
 
+0.3a
+
+Fixed angular velocity on units
+Create console now sets code page to 65001 (UTF-8)
+Classes are now contained in their own files: Sprite, Entity, Unit, Building 
+New function to calculate distance between 2 points
+New attributes for entity class:
+	-nTeam
+New attributes for unit class:
+	-nAttackCooldown
+	-fAttackRange
+	-fAttackDistance
+	-nTargetUnit
+	-nTargetBuilding
+	-nAttackSpeed
+New methods for unit class: 
+	-setTargetUnit
+	-getTargetUnit
+	-setTargetBuilding
+	-getTargetBuilding
+	-attack
+
+Starting engine migration from console to OpenGL
+
 TODO
+
 
 -Add colours
 -User interface functions
 -Keyboard input
 -Mouse input
--Colision detection
+-Colision detection:
+ ·Hitbox for entities
+-Multiplayer capabilities
