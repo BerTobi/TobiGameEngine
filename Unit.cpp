@@ -11,6 +11,7 @@ Unit::Unit()
 	nAttack = 0;
 	nAttackSpeed = 0;
 	nAttackCooldown = 0;
+	nDefaultAttackCooldown = 0;
 	nTargetUnit = -1;
 	nTargetBuilding = -1;
 	fAttackRange = 0;
@@ -26,6 +27,11 @@ void Unit::setHealth(int newHealth)
 void Unit::setSpeed(int newSpeed)
 {
 	fSpeed = newSpeed;
+}
+
+void Unit::setAttack(int newAttack)
+{
+	nAttack = newAttack;
 }
 
 void Unit::move(float nX, float nY)
@@ -61,10 +67,27 @@ int Unit::getTargetBuilding()
 
 void Unit::attack(Unit* target)
 {
-	target->setHealth(target->nHealth - nAttack);
+	if (nAttackCooldown <= 0)
+	{
+		target->setHealth(target->nHealth - nAttack);
+		nAttackCooldown = nDefaultAttackCooldown / nAttackSpeed;
+	}
+	else
+		nAttackCooldown -= 1;
 }
 
 void Unit::attack(Building* target)
 {
-	target->setHealth(target->getHealth() - nAttack);
+	if (nAttackCooldown <= 0)
+	{
+		target->setHealth(target->getHealth() - nAttack);
+		nAttackCooldown = nDefaultAttackCooldown / nAttackSpeed;
+	}
+	else
+		nAttackCooldown -= 1;
+}
+
+void Unit::setAttackSpeed(int newSpeed)
+{
+	nAttackSpeed = newSpeed;
 }

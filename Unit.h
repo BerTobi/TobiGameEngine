@@ -5,6 +5,8 @@
 #include "Building.h"
 #include <iostream>
 
+class Building;
+
 class Unit : public Entity
 {
 public:
@@ -12,6 +14,7 @@ public:
 
 	void setHealth(int newHealth);
 	void setSpeed(int newSpeed);
+	void setAttack(int newAttack);
 	void move(float nX, float nY);
 	void setTarget(float nX, float nY);
 	void setTargetUnit(int index);
@@ -20,6 +23,7 @@ public:
 	int getTargetBuilding();
 	void attack(Unit* target);
 	void attack(Building* target);
+	void setAttackSpeed(int newSpeed);
 
 public:
 
@@ -37,6 +41,7 @@ protected:
 	int nAttackSpeed;
 	int nTargetUnit;
 	int nTargetBuilding;
+	int nDefaultAttackCooldown;
 
 
 };

@@ -52,6 +52,18 @@ New methods for unit class:
 	-getTargetBuilding
 	-attack
 
+0.3b
+
+Implemented attack cooldown and speed in units.
+
+New attribute for unit class:
+	-nDefaultAttackCooldown
+New method for unit class:
+	-setAttackSpeed
+New method for building class:
+	-spawnWave
+
+
 Starting engine migration from console to OpenGL
 
 TODO
