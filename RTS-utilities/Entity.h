@@ -20,6 +20,10 @@ public:
 
 	int getTeam();
 
+	int getID();
+
+	void setID(int nID);
+
 	float fX;
 	float fY;
 	Sprite sprite;
@@ -27,6 +31,10 @@ public:
 protected:
 
 	int nTeam;
+
+private:
+
+	int ID;
 
 };
 

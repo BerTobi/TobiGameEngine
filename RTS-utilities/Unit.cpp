@@ -17,6 +17,8 @@ Unit::Unit()
 	fAttackRange = 0;
 	fAttackDistance = 0;
 	nTeam = 0;
+	sName = "NONE";
+	lastHitID = -1;
 }
 
 void Unit::setHealth(int newHealth)
@@ -69,6 +71,7 @@ void Unit::attack(Unit* target)
 {
 	if (nAttackCooldown <= 0)
 	{
+		if (target->getLastHitID() == -1 && (target->nHealth - nAttack) <= 0) target->setLastHitID(this->getTeam());
 		target->setHealth(target->nHealth - nAttack);
 		nAttackCooldown = nDefaultAttackCooldown / nAttackSpeed;
 	}
@@ -80,6 +83,7 @@ void Unit::attack(Building* target)
 {
 	if (nAttackCooldown <= 0)
 	{
+		
 		target->setHealth(target->getHealth() - nAttack);
 		nAttackCooldown = nDefaultAttackCooldown / nAttackSpeed;
 	}
@@ -90,4 +94,14 @@ void Unit::attack(Building* target)
 void Unit::setAttackSpeed(int newSpeed)
 {
 	nAttackSpeed = newSpeed;
+}
+
+int Unit::getLastHitID()
+{
+	return lastHitID;
+}
+
+void Unit::setLastHitID(int id)
+{
+	lastHitID = id;
 }

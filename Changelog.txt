@@ -1,4 +1,4 @@
-0.1a
+0.1a - 18/08/2023
 
 Console game engine with basic capabilities:
 
@@ -6,31 +6,31 @@ Console game engine with basic capabilities:
 -Write to screen
 -Set tick interval
 
-0.1b
+0.1b - 19/08/2023
 
 Fixed bug where window size wouldn't be set properly
 Added chrono and thread libraries
 
-0.1c
+0.1c - 21/08/2023
 
 Added cursor visibility toggle function
 CreateConsole now accepts arguments to set FontSize
 CreateConsole now checks for largest window size and adjust accordingly 
 Added exception library
 
-0.2a
+0.2a - 24/08/2023
 
 Added screen buffer to the engine class
 Added sprite drawing function
 Added sprite scaling
 
-0.2b
+0.2b - 29/08/2023
 
 Sprites no longer print blank spaces over background
 Sprites are now a class containing text info and size
 Added Entity and unit classes
 
-0.3a
+0.3a - 02/09/2023
 
 Fixed angular velocity on units
 Create console now sets code page to 65001 (UTF-8)
@@ -52,7 +52,7 @@ New methods for unit class:
 	-getTargetBuilding
 	-attack
 
-0.3b
+0.3b - 03/09/2023
 
 Implemented attack cooldown and speed in units.
 
@@ -63,16 +63,37 @@ New method for unit class:
 New method for building class:
 	-spawnWave
 
+0.4.0 - 07/11/2023
 
-Starting engine migration from console to OpenGL
+Changed version numbering system
+Classes are now inside de RTS-utilities folder
+Buffer now uses CHAR-INFO (Supports colours)
+Game loop is now threaded and contained in the engine
+Game loop consists of Settings, Create, Update, Render. 
+(All of those are virtual methods that should be overwritten by the user.)
+Added player class, each one has its own camera
+Added team colours
+Added unique IDs for entities
+Added multiplayer methods initializeClient, Client, initializeServer, Server
+Added updateMenu method
+Changed game loop to account for main menu and lobby
+New methods for unit class:
+	-getLastHidID
+	-setLastHidID
+New attributes for unit class:
+	-sName
+	-lastHitID
+New methods for player class:
+	-getGold
+	-setGold
+
+
 
 TODO
 
-
--Add colours
 -User interface functions
 -Keyboard input
 -Mouse input
 -Colision detection:
- ·Hitbox for entities
--Multiplayer capabilities
+-Hitbox for entities
+

@@ -24,6 +24,8 @@ public:
 	void attack(Unit* target);
 	void attack(Building* target);
 	void setAttackSpeed(int newSpeed);
+	int getLastHitID();
+	void setLastHitID(int id);
 
 public:
 
@@ -33,6 +35,7 @@ public:
 	int nAttackCooldown;
 	float fAttackRange;
 	float fAttackDistance;
+	std::string sName;
 
 protected:
 
@@ -42,7 +45,7 @@ protected:
 	int nTargetUnit;
 	int nTargetBuilding;
 	int nDefaultAttackCooldown;
-
+	int lastHitID;
 
 };
 

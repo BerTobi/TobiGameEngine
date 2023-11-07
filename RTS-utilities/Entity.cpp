@@ -57,3 +57,13 @@ int Entity::getTeam()
 {
 	return nTeam;
 }
+
+int Entity::getID()
+{
+	return ID;
+}
+
+void Entity::setID(int nID)
+{
+	ID = nID;
+}
